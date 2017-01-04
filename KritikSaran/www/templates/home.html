@@ -1,0 +1,23 @@
+ <ion-header-bar class="bar-positive">
+        <button class="button button-icon"></button>
+        <h1 style="text-align: center; padding-left: 5%;" class="title">List pesan</h1>
+        <button class="button button-icon icon ion-ios7-loop" ng-click="reload()"></button>
+</ion-header-bar>
+<ion-view>
+    <ion-content padding="false" class="has-header">
+        <ion-refresher
+            pulling-text="Pull to refresh..."
+            on-refresh="showData()">
+        </ion-refresher>
+        <ion-list show-Delete="data.showDelete" show-Reorder = "data.showReorder">
+            <ion-item class="item item-icon-right" ng-repeat="pesan in pesans" type="item-text-divider" href="#/tab/tambah/{{pesan.id_pesan}}">
+                <i class="icon ion-ios7-arrow-right"></i>
+                <h2>{{pesan.nim}}
+                    <br> 
+                    <font size="2" color="gray" >Pesan : {{pesan.pesan}}</font>
+                </h2>
+                <ion-delete-button class="ion-minus-circled" ng-click="delete(pesan);"></ion-delete-button>
+            </ion-item>
+        </ion-list>
+    </ion-content>
+</ion-view>

@@ -1,0 +1,17 @@
+<ion-header-bar class="bar-positive">
+        <h1 class="title" style="text-align: center">Post Kritik Saran</h1>
+</ion-header-bar>
+<ion-content class="padding">
+      <form>
+        <ion-list>
+            <label class="item item-input">
+                <input type="text" ng-model="mahasiswa.nim" value="{{sess_nim}}" init-from-form> 
+            </label>
+            <label class="item">
+                <textarea ng-model="mahasiswa.pesan" placeholder="Pesan"></textarea>
+            </label>
+        </ion-list>
+        <div class="spacer" style="height: 5px;"></div>
+        <button class="button icon ion-plus-circled button-balanced button-block" ng-click="simpan();">  POST</button>
+    </form>
+</ion-content>

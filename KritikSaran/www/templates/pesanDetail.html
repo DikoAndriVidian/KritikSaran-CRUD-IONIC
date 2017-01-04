@@ -1,0 +1,48 @@
+<ion-header-bar class="bar-positive">
+        <button class="button button-icon icon ion-ios7-arrow-left" ng-click="back();">Back</button>
+        <h1 class="title" style="padding-left: 10%;">Pesan Detail</h1>
+</ion-header-bar>
+<ion-content class="padding" ng-repeat="pesan in pesan">
+    <h3 color="gray">PESAN : <font size="3">{{pesan.nim}}</font></h3>
+    <p>
+        <font size="2" color="gray" >Isi : {{pesan.pesan}}</font>
+    <br><br>
+    <ion-item ng-repeat="pesan in balasans">
+        <font size="2" color="gray" > - {{pesan.balas}}</font>        
+    </ion-item>
+    <button class="button button-balanced button-block" ng-click="editModal()">Balas pesan</button>
+</ion-content>
+<script id="edit.html" type="text/ng-template">
+        <div class="modal">
+            <ion-header-bar class="bar-stable">
+                <button class="button button-icon icon ion-ios7-close-outline" ng-click="batal()"></button>
+                <h1 class="title"> Balas Pesan</h1>
+            </ion-header-bar>
+            <ion-content ng-repeat="pesan in pesan">
+                <form>
+                    <div class="list">
+                        <label class="item item-input">
+                        <span class="input-label">ID :</span>
+                            <input type="text" placeholder="{{pesan.id_pesan}}" ng-model="balasan.id_pesan" value="{{pesan.id_pesan}}" init-from-form readonly="">
+                            <p>{{pesan.id_pesan}}</p>
+                        </label>
+                        <label class="item item-input">
+                        <span class="input-label">Nim :</span>
+                            <input type="text" placeholder="{{pesan.nim}}" ng-model="balasan.nim" value="{{pesan.nim}}" init-from-form readonly="">
+                        </label>
+                        <label class="item item-input">
+                        <span class="input-label">Pesan :</span>
+                            <input type="text" placeholder="{{pesan.pesan}}" ng-model="balasan.pesan" value="{{pesan.pesan}}" init-from-form readonly="">
+                        </label>
+                        <label class="item item-input">
+                        <span class="input-label">Balasan :</span>
+                            <textarea style="width: 100%;" placeholder="Tulis balasan disini..." ng-model="balasan.balasan" init-from-form></textarea>
+                        </label>
+                        <button class="button button-positive button-block" ng-click="balasan();">
+                            Balas
+                        </button>
+                    </div>
+                </form>
+        </ion-content>
+        </div>
+</script>

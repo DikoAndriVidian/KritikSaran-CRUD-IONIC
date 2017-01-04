@@ -1,0 +1,25 @@
+<!--
+Create tabs with an icon and label, using the tabs-positive style.
+Each tab's child <ion-nav-view> directive will have its own
+navigation history that also transitions its views in and out.
+-->
+<ion-tabs tabs-style="tabs-icon-top" class="tabs-icon-top tabs-calm">
+
+  <ion-tab title="Home" icon-off="ion-ios7-home-outline" icon-on="ion-ios7-home" href="#/tab/home">
+    <ion-nav-view name="tab-home"></ion-nav-view>
+  </ion-tab>
+
+  <ion-tab title="Post Pesan" icon-off="ion-ios7-compose-outline" icon-on="ion-ios7-compose" on-double-tap="tabPesan()" href="#/tab/tambah">
+    <ion-nav-view name="tab-tambah"></ion-nav-view>
+  </ion-tab>
+
+  <ion-tab title="Akun" icon-off="ion-ios7-gear-outline" icon-on="ion-ios7-gear" href="#/tab/akun/{{sess_nim}}">
+      <ion-nav-view name="tab-akun"></ion-nav-view>
+  </ion-tab>
+<!-- 
+  <ion-tab title="About" icon-off="ion-ios7-cloud-download-outline" icon-on="ion-ios7-cloud-download" href="#/tab/home">
+    <ion-nav-view name="tab-home"></ion-nav-view>
+  </ion-tab> -->
+
+
+</ion-tabs>
